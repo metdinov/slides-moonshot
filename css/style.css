@@ -5,10 +5,27 @@ p.subtitle {
     text-decoration: line-through
 }
 
-img.logo {
-	border-radius: 100%;
+.reveal section img { 
+	background:none; 
+	border:none; 
+	box-shadow:none; 
 }
 
-.texto {
-    display: block
+div.texto {
+	width: 65%;
+	float: left;
+	text-align: left;
+}
+
+div.poster {
+	width: 30%;
+	float: right;
+}
+
+span#peli {
+	font-style: italic;
+}
+
+footer#cita {
+	font-style: italic;
 }
