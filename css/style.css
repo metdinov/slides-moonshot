@@ -5,6 +5,10 @@ p.subtitle {
     text-decoration: line-through
 }
 
-img {
-	border-radius: 70%;
+img.logo {
+	border-radius: 100%;
+}
+
+.texto {
+    display: block
 }
