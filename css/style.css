@@ -1,0 +1,10 @@
+p.subtitle {
+    font-style: italic
+}
+.strike-through {
+    text-decoration: line-through
+}
+
+img {
+	border-radius: 70%;
+}
