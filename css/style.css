@@ -1,31 +1,56 @@
 p.subtitle {
     font-style: italic
 }
-.strike-through {
-    text-decoration: line-through
-}
 
-.reveal section img { 
-	background:none; 
-	border:none; 
-	box-shadow:none; 
+.reveal section img {
+    background: none;
+    border: none;
+    box-shadow: none;
 }
 
 div.texto {
-	width: 65%;
-	float: left;
-	text-align: left;
+    width: 65%;
+    float: left;
+    text-align: left;
 }
 
 div.poster {
-	width: 30%;
-	float: right;
+    width: 30%;
+    float: right;
 }
 
 span#peli {
-	font-style: italic;
+    font-style: italic;
 }
 
 footer#cita {
-	font-style: italic;
+    font-style: italic;
+}
+
+.row {
+    display: flex;
+    /* equal height of the children */
+}
+
+.col {
+    flex: 1;
+    /* additionally, equal width */
+
+    align-content: center;
+}
+
+div.box {
+    margin-top: 50px;
+    border: 1px;
+}
+
+div.box span {
+    font-family: Inconsolata;
+    font-size: smaller;
+}
+
+img#notime {
+    border: 1px;
+    border-color: black;
+    border-style: solid;
 }

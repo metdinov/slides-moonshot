@@ -9,10 +9,15 @@
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/solarized.css">
-    <link rel="stylesheet" href="css/style.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Custom code font -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -21,7 +26,6 @@
         link.type = 'text/css';
         link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
         document.getElementsByTagName('head')[0].appendChild(link);
-
     </script>
 </head>
 
@@ -42,7 +46,7 @@
                     <ul>
                         <li class="fragment">Google?</li>
                         <li class="fragment">Bing?</li>
-                        <li class="fragment">ImDB?</li>
+                        <li class="fragment">IMDb?</li>
                     </ul>
                 </section>
                 <section>
@@ -63,18 +67,94 @@
                 </section>
                 <section>
                     <div>
-                        <div class="texto"><p><span id="peli">Le Voyage dans la Lune</span> (titulada Viaje a la Luna en español) es una pel&iacute;cula francesa de 1902, en blanco y negro, muda y de ciencia ficci&oacute;n dirigida por Georges M&eacute;li&egrave;s.</p></div>
+                        <div class="texto">
+                            <p><span id="peli">Le Voyage dans la Lune</span> (titulada Viaje a la Luna en español) es una pel&iacute;cula francesa de 1902, en blanco y negro, muda y de ciencia ficci&oacute;n dirigida por Georges M&eacute;li&egrave;s.</p>
+                        </div>
                         <div class="poster">
                             <img id="pelicula" src="img/trip_to_the_moon.jpg" alt="Trip to the Moon">
                         </div>
                     </div>
                 </section>
                 <section>
-                        <div>
-                            <blockquote>Alg&uacute;n d&iacute;a, alguien crear&aacute; una app en mi honor.</blockquote>
-                            <footer>— Georges M&eacute;li&egrave;s (citation needed)</footer>
-                        </div>
+                    <div>
+                        <blockquote>Alg&uacute;n d&iacute;a, alguien crear&aacute; una app en mi honor.</blockquote>
+                        <footer>— Georges M&eacute;li&egrave;s <small>(citation needed)</small></footer>
+                    </div>
                 </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Demo</h2>
+                </section>
+                <section data-background-video="video/demo.mp4">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Tech</h2>
+                    <div class="row">
+                        <div id="col">
+                            <ul>
+                                <li>Retrofit</li>
+                                <li>OkHttp</li>
+                                <li>GSON</li>
+                                <li>Realm</li>
+                                <li>Glide</li>
+                                <li>Facebook SDK</li>
+                                <li>Fabric</li>
+                                <li>Firebase</li>
+                                <li>etc ...</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <img id="neo" src="img/neo.png" alt="Neo Modular">
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Retrofit + OkHttp + GSON</h2>
+                    <pre class="fragment"><code class="hljs" data-trim contenteditable>
+public interface TmdbService {
+    @GET("movie/{movie_id}")
+    Call&lt;Pelicula&gt; getPelicula(@Path("movie_id") Integer id);
+}
+...
+
+Call&lt;Pelicula&gt; pelicula = retrofit.getPelicula(223702);</code></pre>
+                    <div class="box"><span class="fragment">HTTP GET https://api.themoviedb.org/3/movie/<mark>223702</mark></span></div>
+                </section>
+                <section>
+                    <h2>Realm</h2>
+                    <pre class="fragment"><code class="hljs" data-trim contenteditable>
+db = Realm.getDefaultInstance();
+db.copyToRealm(pelicula);
+...
+pelicula = db.where(Pelicula.class)
+             .equalTo("titulo", "Sausage Party")
+             .findFirst();
+                   </code></pre>
+                </section>
+            </section>
+            <section>
+                <h2>TODO</h2>
+                <div class="row">
+                    <div id="col">
+                        <ul>
+                            <li>Recomendaciones</li>
+                            <li>Cartelera</li>
+                            <li>Shares</li>
+                            <li>Notificaciones</li>
+                            <li>Tests</li>
+                            <li>???</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <img id="notime" src="img/notime.jpg" alt="Sweet Brown">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>THE END</h2>
             </section>
         </div>
     </div>
@@ -103,7 +183,6 @@
                 }
             }]
         });
-
     </script>
 </body>
 
