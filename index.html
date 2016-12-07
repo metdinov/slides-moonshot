@@ -113,7 +113,7 @@
                 </section>
                 <section>
                     <h2>Retrofit + OkHttp + GSON</h2>
-                    <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                    <pre class="fragment"><code class="java" data-trim contenteditable>
 public interface TmdbService {
     @GET("movie/{movie_id}")
     Call&lt;Pelicula&gt; getPelicula(@Path("movie_id") Integer id);
@@ -124,16 +124,43 @@ Call&lt;Pelicula&gt; pelicula = retrofit.getPelicula(223702);</code></pre>
                     <div class="box"><span class="fragment">HTTP GET https://api.themoviedb.org/3/movie/<mark>223702</mark></span></div>
                 </section>
                 <section>
+                    <h2>TheMovieDb</h2>
+                    <div class="box" style="margin-top: 0px;"><span class="fragment">HTTP GET https://api.themoviedb.org/3/movie/<mark>223702</mark></span></div>
+                    <pre class="fragment"><code class="json" data-trim contenteditable>{
+  "id": 223702,
+  "original_title": "Sausage Party",
+  "genres": [
+    {
+      "id": 12,
+      "name": "Adventure"
+    },
+    {
+      "id": 16,
+      "name": "Animation"
+    },
+  ...
+  
+}</code></pre>
+                </section>
+                <section>
                     <h2>Realm</h2>
-                    <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                    <pre class="fragment"><code class="java" data-trim contenteditable>
 db = Realm.getDefaultInstance();
 db.copyToRealm(pelicula);
 ...
+
 pelicula = db.where(Pelicula.class)
              .equalTo("titulo", "Sausage Party")
              .findFirst();
-                   </code></pre>
+                  
+int id = 35; // Comedia
+comedias = db.where(Pelicula.class)
+             .equalTo("generos.id", id)
+             .findAll();</code></pre>
                 </section>
+                <section>
+                <h2>Firebase + Fabric</h2>
+            </section>
             </section>
             <section>
                 <h2>TODO</h2>
